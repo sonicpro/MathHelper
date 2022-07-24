@@ -1,4 +1,5 @@
 ﻿using System;
+using static MathHelper.Math;
 
 namespace MathHelper
 {
@@ -6,7 +7,7 @@ namespace MathHelper
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(Sqrtf(16));
         }
     }
 }
