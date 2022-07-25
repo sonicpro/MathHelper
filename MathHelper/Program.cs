@@ -1,13 +1,19 @@
-﻿using System;
-using static MathHelper.Math;
+﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Columns;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Reports;
+using BenchmarkDotNet.Running;
+using Perfolizer.Horology;
 
 namespace MathHelper
 {
-    class Program
+    [DisassemblyDiagnoser(maxDepth: 0)]
+    [MemoryDiagnoser(displayGenColumns: false)]
+    public class Program
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine(Sqrtf(16));
-        }
+        public static void Main(string[] args) =>
+            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args, DefaultConfig.Instance
+            .WithSummaryStyle(new SummaryStyle(System.Globalization.CultureInfo.InvariantCulture, printUnitsInHeader: false, SizeUnit.B, TimeUnit.Nanosecond))
+            );
     }
 }
