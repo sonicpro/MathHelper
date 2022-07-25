@@ -4,7 +4,7 @@ using static System.Math;
 
 namespace MathHelper
 {
-    internal static class Math
+    public class Math
     {
         private const double Number = 0.123556;
 
@@ -18,7 +18,7 @@ namespace MathHelper
         }
 
         [Benchmark]
-        internal static void SqrtClr()
+        public static void SqrtClr()
         {
             var _ = Sqrt(Number);
         }
