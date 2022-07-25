@@ -7,7 +7,7 @@ namespace MathHelper
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Sqrtf(16));
+            Console.WriteLine(SqrtInvoke(16.0) == SqrtClr(16.0));
         }
     }
 }

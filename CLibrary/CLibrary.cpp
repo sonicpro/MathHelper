@@ -6,4 +6,9 @@ extern "C"
 	{
 		return sqrtf(number);
 	}
+
+	__declspec(dllexport) double Sqrt(double number)
+	{
+		return sqrt(number);
+	}
 }
