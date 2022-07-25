@@ -12,13 +12,13 @@ namespace MathHelper
         private static extern double SqrtInvoke(double number);
 
         [Benchmark]
-        public static void SqrtC()
+        public void SqrtC()
         {
             var _ = SqrtInvoke(Number);
         }
 
         [Benchmark]
-        public static void SqrtClr()
+        public void SqrtClr()
         {
             var _ = Sqrt(Number);
         }
